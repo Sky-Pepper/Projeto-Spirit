@@ -45,6 +45,28 @@ for qualidade in qualidades:
 
 pontos = len(qualidades)
 
+defeitos =[]
+
+if len(senha) < 8:
+    defeitos.append("X Tamanho inadequado")
+
+if tem_maiuscula == False:
+    defeitos.append("X Não possui letra maiúscula")
+
+if tem_minuscula == False:
+    defeitos.append("X Não possui letra minúscula")
+
+if tem_numero == False:
+    defeitos.append("X Não possui número")
+
+if tem_simbolo == False:
+    defeitos.append("X Não possui símbolo")
+
+print("\nDefeitos da senha: ")
+
+for defeito in defeitos:
+    print(defeito)
+
 if pontos == 5:
     print("\nSua senha é: forte")
 
