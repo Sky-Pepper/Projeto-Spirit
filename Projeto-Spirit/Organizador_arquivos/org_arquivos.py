@@ -3,10 +3,10 @@ import shutil
 from datetime import datetime
 from tkinter import Tk, filedialog
 
-def create_deafault_extensions_map():
+def create_default_extensions_map():
     return {
         "Imagens": [".jpg", ".png", ".jpeg", ".gif"],
-        "Documentos": [".pdf", "-doc", ".docx", ".txt", ".ppt", "pptx", ".xls", ".xlsx"],
+        "Documentos": [".pdf", ".doc", ".docx", ".txt", ".ppt", ".pptx", ".xls", ".xlsx"],
         "Músicas": [".mp3", ".wav"],
         "Arquivos":[".zip", ".rar", ".7z", ".html"],
         "Código": [".py", ".html", ".js", ".css"],
@@ -17,13 +17,13 @@ def get_folder_for_extensions(extension, extension_map):
     for folder, extensions in extension_map.items():
         if extension in extensions:
             return folder
-        else:
-            return "Outros"
+        
+    return "Outros"
 
 def move_file(file_path, folder_name, directory):
     folder_path = os.path.join(directory, folder_name)
 
-    os.makedirs(folder_path, exists_ok = True)
+    os.makedirs(folder_path, exists_ok=True)
 
     new_path = shutil.move(file_path, folder_path)
 
@@ -31,7 +31,7 @@ def move_file(file_path, folder_name, directory):
     return new_path
 
 def organize_by_extension(directory):
-    extensions_map = create_deafault_extensions_map()
+    extensions_map = create_default_extensions_map()
     for filename in os.listdir(directory):
         file_path = os.path.join(directory, filename)
         if os.path.isfile(file_path):
