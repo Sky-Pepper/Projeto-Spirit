@@ -6,6 +6,7 @@ Objetivo
 Spirit é um conjunto de ferramentas desenvolvido com o objetivo de auxiliar na segurança de senhas e na organização de arquivos, trazendo mais simplicidade e praticidade para a manipulação de pastas e arquivos, além de mais versatilidade na criação e análise de senhas.
 
 Funcionalidades
+
 🔐 Analisador de Senhas
 
 O analisador de senhas avalia a força de uma senha com base em diferentes características, como:
